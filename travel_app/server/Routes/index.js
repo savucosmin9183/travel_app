@@ -1,9 +1,20 @@
 const express = require('express');
 const { Monuments } = require('../Data');
+const {
+    authorizeAndExtractToken
+} = require('../security/Jwt');
+
+const {
+    authorizeRoles
+} = require('../security/Roles');
+
+const UsersController = require('../Users/controllers');
 
 const router = express.Router();
 
-router.get('/monuments', async (req, res, next) => {
+router.use('/users', UsersController);
+
+router.get('/monuments', authorizeAndExtractToken, authorizeRoles('admin','user'),  async (req, res, next) => {
     try {
         const monuments = await Monuments.find();
         res.json(monuments);
@@ -12,7 +23,7 @@ router.get('/monuments', async (req, res, next) => {
     }
 });
 
-router.post('/monuments', async (req, res, next) => {
+router.post('/monuments', authorizeAndExtractToken, authorizeRoles('admin'), async (req, res, next) => {
     const {
         title,
         description,
@@ -39,7 +50,7 @@ router.post('/monuments', async (req, res, next) => {
     }
 });
 
-router.delete('/monuments/:id', async (req, res, next) => {
+router.delete('/monuments/:id', authorizeAndExtractToken, authorizeRoles('admin'), async (req, res, next) => {
     const {
         id
     } = req.params;

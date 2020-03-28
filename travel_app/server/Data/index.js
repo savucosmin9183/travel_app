@@ -6,7 +6,9 @@ mongoose.connect(process.env.DATABASE_URL, {
 });
 
 const Monuments = require('./Models/Monuments');
+const Users = require("./Models/Users");
 
 module.exports = {
-    Monuments
+    Monuments,
+    Users
 }
