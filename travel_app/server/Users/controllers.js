@@ -21,6 +21,7 @@ router.post('/register', async (req, res, next) => {
         res.status(201).end();
     } catch (err) {
         // daca primesc eroare, pasez eroarea mai departe la handler-ul de errori declarat ca middleware in start.js 
+        res.status(err.httpStatus);
         next(err);
     }
 });
@@ -51,4 +52,17 @@ router.get('/', async (req, res, next) => {
         next(err);
     }
 })
+
+router.delete('/:id', async (req, res, next) => {
+    const {
+        id
+    } = req.params;
+    try{
+        await UsersService.delete_by_id(id)
+        res.status(200).end();
+    } catch (err) {
+        next(err);
+    }
+})
+
 module.exports = router;

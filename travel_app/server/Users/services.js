@@ -24,6 +24,8 @@ const add = async (name, email, username, password, role) => {
         password: hashedPassword,
         role
     });
+    if((await Users.find({"username": username})).length > 0) 
+        throw new ServerError(`Utilizatorul ${username} exista deja!`, 400);
     await user.save();
 };
 
@@ -47,8 +49,13 @@ const get_all = async () => {
     return await Users.find();
 }
 
+const delete_by_id = async (id) => {
+    await Users.findByIdAndDelete(id);
+}
+
 module.exports = {
     add,
     authenticate,
-    get_all
+    get_all,
+    delete_by_id
 }
