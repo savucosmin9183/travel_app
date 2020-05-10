@@ -1,0 +1,63 @@
+
+
+.popup_div{
+   width: 500px;
+   height: 500px;
+   text-align: left;
+
+}
+
+.popup_div .title {
+    margin: 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.popup_div .description{
+    margin-right: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    text-indent: 7%;
+}
+
+.popup_div .address{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.mydivicon{
+    width:50px;
+    height: 50px;
+    background-image: url('../Images/pin2.svg')
+}
+
+div.mydivicon2{
+    width:50px;
+    height: 50px;
+    background-image: url('../Images/pin.svg')
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 0px;
+    width: 500px;
+    height: 500px;
+  }
+.rating{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.rating_form{
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.popup_image{
+    width: 60%;
+    height: 30%;
+    padding-top: 10px;
+
+}

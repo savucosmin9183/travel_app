@@ -11,6 +11,14 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    confirmed:{
+        type: Boolean,
+        default: false
+    },
+    confirmation_token:{
+        type: String,
+        default: ""
+    },
     username: {
         type: String,
         required: true
@@ -23,6 +31,10 @@ const UserSchema = new Schema({
         type: String,
         default: 'user',
         enum: ['admin', 'user', 'tech']
+    },
+    visited:{
+        type: Array,
+        default: []
     }
 }, { timestamps: true });
 

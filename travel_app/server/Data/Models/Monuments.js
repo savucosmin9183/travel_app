@@ -28,22 +28,27 @@ const MonumentSchema = new Schema({
         type: String,
         required: true
     },
+    number_of_votes: {
+        type: Number,
+        default: 0
+    },
     rating: {
         type: Number,
         min: 0,
-        max: 10,
+        max: 5,
         default: 0
     },
-    location: {
-        type: {
-            type:String,
-            enum: ['Point'],
-            required: true
-        },
-        coordinates: {
-            type:[Number],
-            required: true
-        }
+    longitude: {
+        type: Number,
+        min: -180,
+        max: 180,
+        required: true
+    },
+    latitude: {
+        type: Number,
+        min: -90,
+        max: 90,
+        required: true 
     }
 }, { timestamps: true });
 

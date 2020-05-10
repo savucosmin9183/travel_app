@@ -1,0 +1,54 @@
+.header{
+    height: 10vh;
+    background-color: #5A5959;
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    height: 10vh;
+    width: 10vh;
+    margin-left: 7%;
+}
+
+.welcome{
+    margin-left:auto;
+    margin-right:10vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact_link{
+    color: white;
+    font-family: Cambria,Georgia,serif; 
+    font-size: 24px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.welcometext{
+    color:white;
+    font-size: 24px;
+    margin-right: 15px;
+    font-family: Cambria,Georgia,serif; 
+}
+
+.logout {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#5A5959;
+	font-family: Cambria,Georgia,serif; 
+	font-size:18px;
+	font-weight:bold;
+    padding:5px 15px;
+    height: 5vh;
+}
+.logout:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
